@@ -1,11 +1,7 @@
 name: 每日股票分析（美股）
 
 on:
-  # 定时触发 - 美股收盘后 1 小时（美东时间 17:00；UTC 22:03 = 冬令时 14:03 PT / 夏令时 15:03 PT；错峰 :03 分钟，避开整点调度高峰）
-  schedule:
-    - cron: '3 22 * * 1-5'     # 周一到周五，UTC 22:03
-  
-  # 手动触发
+  # 仅手动触发：Muse 在美股收盘后 1 小时（14:00 PT）派发 workflow_dispatch；定时触发已移除（GitHub 调度常晚数小时）
   workflow_dispatch:
     inputs:
       mode:
