@@ -1,9 +1,8 @@
 name: 每日股票分析
 
 on:
-  # 定时触发 - 每天北京时间 18:00 (UTC 10:00)
-  schedule:
-    - cron: '0 10 * * 1-5'     # 周一到周五，UTC 10:00 = 北京时间 18:00
+  # 定时任务已拆分到 01-daily-analysis-us.yml（美股）与 02-daily-analysis-cn.yml（A股）；
+  # 本文件仅保留手动触发，用于一次性跑全量自选股（STOCK_LIST）。
   
   # 手动触发
   workflow_dispatch:
