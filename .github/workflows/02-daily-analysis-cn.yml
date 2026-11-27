@@ -1,11 +1,7 @@
 name: 每日股票分析（A股）
 
 on:
-  # 定时触发 - A股收盘后 3 分钟（北京时间 15:03；UTC 07:03；错峰 :03 分钟，避开整点调度高峰）
-  schedule:
-    - cron: '3 7 * * 1-5'     # 周一到周五，UTC 07:03
-  
-  # 手动触发
+  # 仅手动触发：Muse 在 A 股收盘后 1 小时（16:00 CST）派发 workflow_dispatch；定时触发已移除（GitHub 调度常晚数小时）
   workflow_dispatch:
     inputs:
       mode:
